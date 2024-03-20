@@ -1,0 +1,200 @@
+
+<div class="registration-area">
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-3 pr-0 bg-primary">
+      <div class="registraion-left-area text-center text-white pb-3">
+            <img src="/assets/img/registration.png" alt="" class="img-fluid" />
+            <h3>Welcome to NewsIndia24</h3>
+            <p>Create a profile then you can share the genuine post.</p>
+
+            <button class="btn btn-dark text-white">Go to Home Page</button>
+        
+      </div>
+    </div>
+    <div class="col-md-9">
+      
+  <div class="card mt-20">
+    <div class="card-header p-2 bg-primary">
+      <p class="card-title text-white">Welcome to Registration Form</p>
+       
+    </div>
+    <form  [formGroup]="registration" (ngSubmit)="registrationSubmit()" method="post" enctype="multipart/form-data">
+    <div class="card-body">
+     
+        <div>
+          
+          
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1m">First name</label>
+                <input type="text" oninput="this.value =  this.value.replace(/[^a-zA-Z]+/g, '')"
+                formControlName="user_first_name" [maxLength]="15" class="form-control form-control-lg"  />
+                <span class="text-danger" *ngIf="ctrl.user_first_name.invalid && ctrl.user_first_name.touched">Please fill the Username</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1n">Last name</label>
+                <input type="text" [maxLength]="15" oninput="this.value = this.value.replace (/[^a-zA-Z]+/g, '')"
+                 formControlName="user_last_name" class="form-control form-control-lg" />
+               
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1m1">Your Profile Pic</label>
+                <input type="file" formControlName="user_img" (change)="onSelectedFile($event)" class="form-control form-control-lg" />
+               
+              </div>
+            </div>
+          </div>
+  
+           <div class="row ">
+            <div class="col-md-4">
+  
+          
+          <div class="form-outline">
+            <label class="form-label" for="form3Example8">Address</label>
+            <input type="text" [maxlength]="100" formControlName="user_add" class="form-control form-control-lg" />
+           
+          </div> </div>
+          
+          <div class="col-md-4">
+            <br/>
+          <div class="d-md-flex justify-content-start align-items-center py-2">
+  
+            <h6 class="mb-0">Gender: </h6>
+  
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" type="radio" formControlName="user_gender" name="user_gender" id="femaleGender"
+                value="Female" />
+              <label class="form-check-label" for="femaleGender">Female</label>
+            </div>
+  
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" formControlName="user_gender" type="radio" name="user_gender" id="maleGender"
+                value="Male" />
+              <label class="form-check-label" for="maleGender">Male</label>
+            </div>
+  
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" formControlName="user_gender" type="radio" name="user_gender" id="otherGender"
+                value="Transgender" />
+              <label class="form-check-label" for="otherGender">Other</label>
+            </div>
+  
+          </div>
+          </div>
+          <div class="col-md-4">
+            <label class="form-check-label">State</label>
+        <input class="form-check-input"
+         formControlName="user_state" type="text" class="form-control"
+        />
+        
+  
+        </div>
+       
+      </div>
+          <div class="row">
+           
+            <div class="col-md-4">
+           
+                <label class="form-label">City</label>
+                <input class="form-check-input" formControlName="user_city" type="text" class="form-control"
+                />
+                
+            </div>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example9">DOB</label>
+                <input type="date"
+                formControlName="user_dob" class="form-control form-control-lg" />
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example90">Pincode</label>
+                <input type="text" [maxLength]="8" oninput="this.value = this.value.replace(/\D+/g, '')"
+                 formControlName="user_pincode" class="form-control form-control-lg" />
+               
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            
+         
+  
+            <div class="col-md-4">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example97">Email ID</label>
+            <input type="text" formControlName="user_email" class="form-control form-control-lg"/>
+            <!-- <div *ngIf="registration.controls['user_email'].invalid && (registration.controls['user_email'].dirty || registration.controls['user_email'].touched)" class="alert alert-danger form-danger" role="alert">
+  
+              <div *ngIf="registration.controls['user_email'].errors">
+                  El Nom del professional es obligatori
+              </div>
+          
+          </div> -->
+          <div *ngIf="registration.get('user_email')?.errors?.['pattern']" class="text-danger text-bold">
+               <!-- {{registration.get('user_email').errors|json }} -->
+               Please enter correct formate
+          </div>
+          </div> </div>
+           
+          <div class="col-md-4">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example99">Password</label>
+            <input type="text" id="form3Example99" formControlName="user_password" class="form-control form-control-lg" />
+           
+          </div>
+        </div>
+        <div class="col-md-3" style="display: none;">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example99">Registration Date</label>
+            <input type="text" formControlName="user_date" class="form-control form-control-lg" value="{{getFormattedDate()}}"/>
+           
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
+          <div class="form-outline">
+            <label class="form-label">Your Eid</label>
+            <input type="text" formControlName="user_code" value="user_code" class="form-control form-control-lg" />
+           
+          </div>
+  
+        </div> -->
+        </div>
+  
+        
+  
+         
+         
+  
+          
+        </div>
+     
+   
+    </div>
+    <div class="card-footer p-0">
+      <div class="d-flex justify-content-between align-items-center p-2">
+        <p class="text-center mb-0">Do Have You Account ? <a routerLink="../login">Login</a></p>
+        <!-- <a type="button" class="btn btn-success btn-lg ms-2" routerLink="/login">Login</a> -->
+        <button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
+           <!-- <a type="button" class="btn btn-success btn-lg ms-2" routerLink="../../emailotp/{{user_id}}">Varification</a> -->
+      </div>
+    
+    </div>
+  </form>
+  </div>
+  <div class="registraion-ads">
+    <img src="/assets/img/ads.jpg" alt="" class="img-fluid" />
+   </div>
+    </div>
+  </div>
+</div>
+</div>

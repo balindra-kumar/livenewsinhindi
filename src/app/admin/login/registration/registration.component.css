@@ -1,0 +1,16 @@
+.registration-area{
+ 
+    padding: 20px 0;
+}
+label{
+    font-weight: bold;
+}
+.registraion-ads{
+    overflow: hidden;
+   
+    border: 1px solid gray;
+    margin-top: 20px;
+}
+.registraion-ads h1{
+     color: #fff;
+}

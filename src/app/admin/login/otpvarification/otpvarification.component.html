@@ -1,0 +1,40 @@
+
+
+<section class="ftco-section">
+    <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+    <h2 class="heading-section">Validate Your Account Through OTP</h2>
+    </div>
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-md-12 col-lg-10">
+    <div class="wrap d-md-flex">
+    <div class="img" style="background-image: url(../../../../assets/img/breaking-news.jpg);">
+    </div>
+    <div class="login-wrap p-4 p-md-5">
+    <div>
+    <div>
+    <h4>Registraion Email ID</h4>
+    </div>
+    <div>
+    <p class="social-media d-flex justify-content-end">
+    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+    </p>
+    </div>
+    </div>
+    <form method="post" [formGroup]="emailVar" (ngSubmit)="emailVarSubmit()">
+        <div class="otp-field">
+        <input type="text" class="form-control mb-3" placeholder="Registration Email Enter" formControlName="user_email"/>
+      
+        </div>
+        <input type="submit" value="submit" class="btn btn-lg bg-success" />
+       </form>
+    <!-- <p>Not a member? <a routerLink="../registration">Registraion</a></p> -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>

@@ -1,0 +1,104 @@
+<div class="card">
+    <div class="card-header">
+      <h2>All Post </h2>
+    </div>
+    <div class="card-body">
+  
+      <input type="text" placeholder="Search by Name" (keyup)="filterData($event)" class="border form-control shadow">
+  <div class="table-one">
+  
+      <div class="table-responsive">
+          <table class="table table-bordered">
+     <tbody>
+          <tr class="bg-dark text-white">
+          <td style="width:40px">Id</td>
+          <td> Title</td>
+          <td> Meta Description</td>
+          <td> Meta Keywords</td>
+          <td> Url</td>
+          <td> Category</td>
+          <td> Headline</td>
+          <td> Img</td>
+          <td> Description</td>
+          <td> Question 1</td>
+          <td> Answer 1</td>
+          <td> Question 2</td>
+          <td> Answer 2</td>
+          <td> Question 3</td>
+          <td> Answer 3</td>
+          <td> Author</td>
+          <td>Email</td>
+          <td>Update</td>
+          <td>Delete</td>
+      </tr>
+    
+    
+      <!-- <tr *ngFor="let post of filteredData ? filteredData : data "> -->
+      <tr *ngFor="let post of filteredData">
+      <td style="width:40px" (click)="ShowDataClick(post.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">&#x1F441;</td>
+         
+          <td><p>{{post.post_title}}</p></td>
+          <td><p>{{post.post_meta_desc.substr(0,40)}}</p></td>
+          <td><p>{{post.post_meta_keyword.substr(0,40)}}</p></td>
+          <td><p>{{post.post_url}}</p></td>
+          <td><p>{{post.post_cat}}</p></td>
+          <td><p>{{post.post_headline.substr(0,40)}}</p></td>
+          <td><p>{{post.post_img}}</p></td>
+          <td><p>{{post.post_desc.substr(0,40)}}</p></td>
+          <td><p>{{post.post_question1.substr(0,40)}}</p></td>
+          <td><p>{{post.post_answer1.substr(0,40)}}</p></td>
+          <td><p>{{post.post_question2.substr(0,40)}}</p></td>
+          <td><p>{{post.post_answer2.substr(0,40)}}</p></td>
+          <td><p>{{post.post_question3.substr(0,40)}}</p></td>
+          <td><p>{{post.post_answer3.substr(0,40)}}</p></td>
+          <td><p>{{post.post_autdor}}</p></td>
+          <td><p>{{post.author_email}}</p></td>
+          <!-- <td><a routerLink="../postupdate/{{post.id}}">Update</a></td> -->
+          <td><button class="btn btn-info" (click)="redirectToSpecificPost(post)">Update</button></td>
+           <td (click)="deleteDataClick(post.id)">Delete</td>
+           
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+                   
+                   <div *ngFor="let item of onePostDataArray">
+                  <p>{{item.post_title}}</p>
+                  <p>{{item.post_meta_desc}}</p>
+                  <p>{{item.post_meta_keyword}}</p>
+                  <p>{{item.post_url}}</p>
+                  <p>{{item.post_cat}}</p>
+                  <p>{{item.post_headline}}</p>
+                  <p>{{item.post_headline}}</p>
+                  <p>{{item.post_img}}</p>
+                  <p>{{item.post_desc}}</p>
+                  <p>{{item.post_question1}}</p>
+                  <p>{{item.post_answer1}}</p>
+                  <p>{{item.post_question2}}</p>
+                  <p>{{item.post_answer2}}</p>
+                  <p>{{item.post_question3}}</p>
+                  <p>{{item.post_answer3}}</p>
+              </div>
+                   
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  </div>

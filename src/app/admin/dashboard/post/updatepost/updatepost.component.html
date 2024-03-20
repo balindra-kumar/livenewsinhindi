@@ -1,0 +1,159 @@
+
+<div class="card">
+    <div class="card-header"> <h3 class="text-uppercase">Update Post</h3>
+    </div>
+    <div class="card-body">
+  
+  <div class="row g-0">
+           
+      <div class="col-xl-12">
+        <form [formGroup]="updateArticle" (ngSubmit)="getUpdateArticle()" method="post" enctype="multipart/form-data">
+        <div class="card-body p-0 text-black">
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1m">Post Title</label>
+                <input type="text" formControlName="post_title" class="form-control"  />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-outline">
+                  <label class="form-label" for="form3Example1m1">Your Profile Pic</label>
+                  <input type="file" formControlName="post_img" accept=".png" (change)="onSelectedFile($event)" class="form-control" />
+                  <img width="100" [src]="base64Img">
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-md-12">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1n">Meta Description</label>
+                <input type="text" formControlName="post_meta_desc" class="form-control" />
+              </div>
+            </div>
+  
+            <div class="col-md-12">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1n">Meta Keyword</label>
+                <input type="text" formControlName="post_meta_keyword" class="form-control" />
+              </div>
+            </div>
+  
+            <div class="col-md-12">
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1n">Post URL</label>
+                <input type="text" formControlName="post_url" class="form-control" />
+              </div>
+            </div>
+  
+            
+            <div class="col-md-12">
+              <label class="form-label">Category</label>
+              <div> 
+                <!-- formControlName="post_cat" -->
+                <select  formControlName="post_cat" class="form-control" name="type">
+                  <option value="" disabled selected="selected">-- Select Event Type --</option>
+                
+                 <option value="news">News</option>
+                <option value="business">Business</option>
+                <option value="technology">Technology</option>
+                <option value="blog">Blog</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="sports">Sports</option>
+                <option value="science">Science</option>
+                <option value="health">Health</option>
+                <option value="education">Education</option>
+                <option value="job">Job</option>
+                <option value="politics">Politics</option>
+                <option value="market">Market</option>
+                <option value="meditation">Meditation</option>
+                <option value="lifestyle">LifeStyle</option>
+                <option value="food">Food</option>
+                <option value="software">Software</option>
+                <option value="website">Website</option>
+                <option value="game">Game</option>
+                <option value="moviesongs">Top Movie & Song</option>
+                <option value="food">Food</option>
+                </select>
+                </div>
+  
+            </div>
+  
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Headline Description</label>
+            <angular-editor id="editor1" formControlName="post_headline" (change)="onSelectedHeadline($event)"></angular-editor>
+          </div>
+  
+          <!-- [config]="config" -->
+  
+  
+          <div class="form-outline">
+            <label class="form-label" for="form3Example9">Post Description</label>
+            <angular-editor id="editor2" formControlName="post_desc"></angular-editor>
+           
+          </div>
+  
+  
+  
+         
+  
+          <div class="form-outline">
+            <label class="form-label">Question 1</label>
+            <input type="text" formControlName="post_question1" class="form-control" />
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Answer 1</label>
+            <input type="text" formControlName="post_answer1" class="form-control" />
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Question 2</label>
+            <input type="text" formControlName="post_question2" class="form-control" />
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Answer 2</label>
+            <input type="text" formControlName="post_answer2" class="form-control" />
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Question 3</label>
+            <input type="text" formControlName="post_question3" class="form-control" />
+           
+          </div>
+  
+          <div class="form-outline">
+            <label class="form-label">Answer 3</label>
+            <input type="text" formControlName="post_answer3" class="form-control" />
+          </div>
+  
+          <!-- <div class="form-outline hidden-sm hidden-xs hidden-md hidden-lg">
+            <label class="form-label">Hour</label>
+            <input type="text" formControlName="post_hour" class="form-control" />
+          </div> -->
+  
+          <div class="form-outline hidden-sm hidden-xs hidden-md hidden-lg">
+            <label class="form-label">Author</label>
+            <input type="text" formControlName="post_author" class="form-control" />
+          </div>
+  
+  
+  
+  
+          <div class="d-flex justify-content-end pt-3 align-items-center">
+            <a type="button" class="text-success btn-lg ms-2" routerLink="../postread">See Your Post</a>
+            <button type="submit" class="btn btn-success btn-sm ms-2">Post Your Article</button>
+          </div>
+  
+        </div>
+     </form>
+      </div>
+    </div>
+    </div>
+    </div>
+  

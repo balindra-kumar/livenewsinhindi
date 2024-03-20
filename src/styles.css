@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card-footer{
+    border-top: 1px solid gray !important;
+    background: var(--bs-gray-300) !important;
+}
