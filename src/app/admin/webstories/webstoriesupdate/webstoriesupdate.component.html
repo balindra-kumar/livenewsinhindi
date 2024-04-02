@@ -1,0 +1,155 @@
+<div class="d-flex justify-content-center align-items-center h-100">
+    <div class="col admin-post-area">
+        <div class="card m-3 card-registration my-4">
+            <form [formGroup]="updateWebstories" (ngSubmit)="updateWebstoriesSubmit()">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header">
+                        <h3>Web Stories Update </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <p class="form-control bg-light-warning" disabled>{{userData.web_cat}} [ You cannot change]</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" formControlName="web_title">
+                        </div>
+                        <div class="form-group">
+                            <label>Meta Description</label>
+                            <input type="text" class="form-control" formControlName="web_meta_desc">
+                        </div>
+                        <div class="form-group">
+                            <label>Meta Keywords</label>
+                            <input type="text" class="form-control" formControlName="web_meta_key">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link</label>
+                            <p class="form-control bg-light-warning" disabled>{{userData.web_link}} [ You cannot change]</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="text" class="form-control" formControlName="web_date">
+                        </div>
+                        <div class="form-group">
+                            <label>Time</label>
+                            <input type="text" class="form-control" formControlName="web_time">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label>Hour</label>
+                            <input type="text" class="form-control" formControlName="web_hour">
+                        </div> -->
+
+
+
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 1</label>
+                            <input type="text" class="form-control" formControlName="web_heading1">
+                            <label>Heading Img 1</label>
+                            <input type="file" class="form-control" formControlName="web_img1" accept=".png, .jpg, .jpeg" (change)="onSelectedFile($event)">
+                            <img width="100" [src]="this.base64Img1"/>
+                            <label>Heading 1 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc1">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 2</label>
+                            <input type="text" class="form-control" formControlName="web_heading2">
+                            <label>Heading Img 2</label>
+                            <input type="file" class="form-control" formControlName="web_img2" (change)="onSelectedFile2($event)">
+                            <img width="100" [src]="this.base64Img2"/>
+                            <label>Heading 2 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc2">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 3</label>
+                            <input type="text" class="form-control" formControlName="web_heading3">
+                            <label>Heading Img 3</label>
+                            <input type="file" class="form-control" formControlName="web_img3" (change)="onSelectedFile3($event)">
+                            <img width="100" [src]="this.base64Img3"/>
+                            <label>Heading 3 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc3">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 4</label>
+                            <input type="text" class="form-control" formControlName="web_heading4">
+                            <label>Heading Img 4</label>
+                            <input type="file" class="form-control" formControlName="web_img4" (change)="onSelectedFile4($event)">
+                            <img width="100" [src]="this.base64Img4"/>
+                            <label>Heading 4 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc4">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 5</label>
+                            <input type="text" class="form-control" formControlName="web_heading5">
+                            <label>Heading Img 5</label>
+                            <input type="file" class="form-control" formControlName="web_img5" (change)="onSelectedFile5($event)">
+                            <img width="100" [src]="this.base64Img5"/>
+                            <label>Heading 5 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc5">
+                        </div>
+
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 6</label>
+                            <input type="text" class="form-control" formControlName="web_heading6">
+                            <label>Heading Img 6</label>
+                            <input type="file" class="form-control" formControlName="web_img6" (change)="onSelectedFile6($event)">
+                            <img width="100" [src]="this.base64Img6"/>
+                            <label>Heading 6 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc6">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 7</label>
+                            <input type="text" class="form-control" formControlName="web_heading7">
+                            <label>Heading Img 7</label>
+                            <input type="file" class="form-control" formControlName="web_img7" (change)="onSelectedFile7($event)">
+                            <img width="100" [src]="this.base64Img7"/>
+                            <label>Heading 7 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc7">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 8</label>
+                            <input type="text" class="form-control" formControlName="web_heading8">
+                            <label>Heading Img 8</label>
+                            <input type="file" class="form-control" formControlName="web_img8" (change)="onSelectedFile8($event)">
+                            <img width="100" [src]="this.base64Img8"/>
+                            <label>Heading 8 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc8">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 9</label>
+                            <input type="text" class="form-control" formControlName="web_heading9">
+                            <label>Heading Img 9</label>
+                            <input type="file" class="form-control" formControlName="web_img9" (change)="onSelectedFile9($event)">
+                            <img width="100" [src]="this.base64Img9"/>
+                            <label>Heading 9 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc9">
+                        </div>
+
+                       
+                       
+                    </div>
+                    <div class="card-footer pb-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default btn-primary float-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

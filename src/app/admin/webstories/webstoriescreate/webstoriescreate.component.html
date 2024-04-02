@@ -1,0 +1,161 @@
+<div class="d-flex justify-content-center align-items-center h-100">
+    <div class="col admin-post-area">
+        <div class="card m-3 card-registration my-4">
+            <form [formGroup]="webstories" (ngSubmit)="webstoriesSubmit()" method="post" enctype="multipart/form-data">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header">
+                        <h3>Create New Web Stories</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" formControlName="web_title" (keyup)="onInputPost()" [(ngModel)]="web_title">
+                        </div>
+                        <div class="form-group">
+                            <label>Meta Description</label>
+                            <input type="text" class="form-control" formControlName="web_meta_desc">
+                        </div>
+                        <div class="form-group">
+                            <label>Meta Keywords</label>
+                            <input type="text" class="form-control" formControlName="web_meta_key">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Link</label>
+                           
+                            <input type="text" formControlName="web_link" class="form-control" pattern="^\w+(?:[]\w+)*(?:\-\w+(?:[]\w+)*)*$"/>
+                        </div>
+                        <div *ngIf="webstories.get('web_link')?.['errors']?.['pattern']">
+                            <p class="text-danger">Follow : Demo Link Title : word-word-word-word : what-is-computer</p>
+                          </div>
+                        
+                        <div class="form-group">
+                            <div class="form-outline">
+                              <label class="form-label">Category</label>
+                             <select class="form-control" formControlName="web_cat">
+                                <option value="" disabled selected="selected">-- Select Event Type --</option>
+                                <option value="news">News</option>
+                                <option value="business">Business</option>
+                                <option value="technology">Technology</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="sports">Sports</option>
+                                <option value="science">Science</option>
+                                <option value="health">Health</option>
+                                <option value="education">Education</option>
+                                <option value="job">Job</option>
+                                <option value="politics">Politics</option>
+                                <option value="market">Market</option>
+                                <option value="meditation">Meditation</option>
+                                <option value="lifestyle">LifeStyle</option>
+                                <option value="food">Food</option>
+                                <option value="travel">Travel</option>
+                             </select>
+                            </div>
+                          </div>
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 1</label>
+                            <input type="text" class="form-control" formControlName="web_heading1">
+                            <label>Heading Img 1</label>
+                            <input type="file" class="form-control" formControlName="web_img1" accept="image/*" (change)="onSelectedFile($event)">
+                            <label>Heading 1 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc1">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 2</label>
+                            <input type="text" class="form-control" formControlName="web_heading2">
+                            <label>Heading Img 2</label>
+                            <input type="file" class="form-control" formControlName="web_img2" accept="image/*" (change)="onSelectedFile2($event)">
+                            <label>Heading 2 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc2">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 3</label>
+                            <input type="text" class="form-control" formControlName="web_heading3">
+                            <label>Heading Img 3</label>
+                            <input type="file" class="form-control" formControlName="web_img3" accept="image/*" (change)="onSelectedFile3($event)">
+                            <label>Heading 3 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc3">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 4</label>
+                            <input type="text" class="form-control" formControlName="web_heading4">
+                            <label>Heading Img 4</label>
+                            <input type="file" class="form-control" formControlName="web_img4" accept="image/*" (change)="onSelectedFile4($event)">
+                            <label>Heading 4 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc4">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 5</label>
+                            <input type="text" class="form-control" formControlName="web_heading5">
+                            <label>Heading Img 5</label>
+                            <input type="file" class="form-control" formControlName="web_img5" accept="image/*" (change)="onSelectedFile5($event)">
+                            <label>Heading 5 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc5">
+                        </div>
+
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 6</label>
+                            <input type="text" class="form-control" formControlName="web_heading6">
+                            <label>Heading Img 6</label>
+                            <input type="file" class="form-control" formControlName="web_img6" accept="image/*" (change)="onSelectedFile6($event)">
+                            <label>Heading 6 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc6">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 7</label>
+                            <input type="text" class="form-control" formControlName="web_heading7">
+                            <label>Heading Img 7</label>
+                            <input type="file" class="form-control" formControlName="web_img7" accept="image/*" (change)="onSelectedFile7($event)">
+                            <label>Heading 7 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc7">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 8</label>
+                            <input type="text" class="form-control" formControlName="web_heading8">
+                            <label>Heading Img 8</label>
+                            <input type="file" class="form-control" formControlName="web_img8" accept="image/*" (change)="onSelectedFile8($event)">
+                            <label>Heading 8 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc8">
+                        </div>
+
+                        <div class="form-group bg-light-grey p-3 mt-5 card">
+                            <label>Heading 9</label>
+                            <input type="text" class="form-control" formControlName="web_heading9">
+                            <label>Heading Img 9</label>
+                            <input type="file" class="form-control" formControlName="web_img9" accept="image/*" (change)="onSelectedFile9($event)">
+                            <label>Heading 9 Description</label>
+                            <input type="text" class="form-control" formControlName="web_heading_desc9">
+                        </div>
+
+                        <div class="form-outline hidden-sm hidden-xs hidden-md hidden-lg">
+                            <label class="form-label" >Author Name</label>
+                            <input type="text" formControlName="post_author" class="form-control"  value="{{author_name()}}"/>
+                          </div>
+                    
+                          <div class="form-outline hidden-sm hidden-xs hidden-md hidden-lg">
+                            <label lass="form-label" >Author Email</label>
+                          
+                            <input type="email" formControlName="user_email" class="form-control" value="{{author_email()}}"/>
+                          </div>
+                          
+                       
+                    </div>
+                    <div class="card-footer pb-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default btn-primary float-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

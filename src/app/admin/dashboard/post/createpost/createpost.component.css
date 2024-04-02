@@ -1,3 +1,7 @@
 .hidden-lg{
     display: none;
 }
+.angular-editor-toolbar .ql-video,
+.angular-editor-toolbar .ql-image {
+  display: none;
+}

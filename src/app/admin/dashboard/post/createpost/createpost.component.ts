@@ -6,15 +6,16 @@ import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+import {AngularEditorModule }  from '@kolkov/angular-editor';
 
 declare var $: any;
 @Component({
   selector: 'app-createpost',
   standalone: true,
-  imports: [ ReactiveFormsModule,NgIf,HttpClientModule,CommonModule,RouterLink,],
+  imports: [ ReactiveFormsModule,NgIf,HttpClientModule,CommonModule,RouterLink,AngularEditorModule],
   templateUrl: './createpost.component.html',
-  styleUrl: './createpost.component.css'
+  styleUrl: './createpost.component.css',
+ 
 })
 export class CreatepostComponent {
 
@@ -155,7 +156,6 @@ postArticle:any = new FormGroup({
   post_meta_keyword : new FormControl('',[Validators.required]),
   post_url : new FormControl('',[Validators.required]),
   post_cat : new FormControl('',[Validators.required]),
-  post_headline : new FormControl('',[Validators.required]),
   post_img : new FormControl('',[Validators.required]),
   post_desc : new FormControl('',[Validators.required]),
   post_question1 : new FormControl('',[Validators.required]),
@@ -284,7 +284,7 @@ formData.append('authorizedUserId',this.authorizedUserId);
   let a:any= document.getElementById("cpatchaTextBox");
   let aValue = a.value;
   let b =this.code
-  const explicitWords = /sex|sexy|xxx|porn|shemale|escort|blue|guns|bumbs|abuse|nuditity|xvideos|xvideo|naked|fucks baby|lesbian|shemale|gay|escort service/i;
+  const explicitWords = /sex|sexy|xxx|porn|shemale|escort|blue|guns|bumbs|abuse|nuditity|xvideos|xvideo|naked|fucks baby|lesbian|shemale|gay|escort/i;
 
    
    if (this.ctrl.lang_cat.valid==false){
@@ -293,123 +293,116 @@ formData.append('authorizedUserId',this.authorizedUserId);
   else if(this.ctrl.post_title.valid==false){
   return alert("Post Title is required");
   }
-  else if(explicitWords.test(this.ctrl.post_title.value)){
-    return alert("Post Title contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_title.value)){
+  //   return alert("Post Title contains explicit words. Please remove them. ");
+  // }
   else if(this.ctrl.post_meta_desc.valid==false){
   return alert("Post Meta Description is required");
   }
-  else if(explicitWords.test(this.ctrl.post_meta_desc.value)){
-     return alert("Post Meta Description contains explicit words. Please remove them. ");
-   }
+  // else if(explicitWords.test(this.ctrl.post_meta_desc.value)){
+  //    return alert("Post Meta Description contains explicit words. Please remove them. ");
+  //  }
   else if(this.ctrl.post_meta_keyword.valid==false){
   return alert("Post Meta Keyword is required");
   }
-  else if(explicitWords.test(this.ctrl.post_meta_keyword.value)){
-     return alert("Post Meta Keyword contains explicit words. Please remove them. ");
-   }
+  // else if(explicitWords.test(this.ctrl.post_meta_keyword.value)){
+  //    return alert("Post Meta Keyword contains explicit words. Please remove them. ");
+  //  }
   else if(this.ctrl.post_meta_desc.valid==false){
   return alert("Post Meta Description is required");
   }
-  else if(explicitWords.test(this.ctrl.post_meta_desc.value)){
-     return alert("Post Meta Description contains explicit words. Please remove them. ");
-   }
+  // else if(explicitWords.test(this.ctrl.post_meta_desc.value)){
+  //    return alert("Post Meta Description contains explicit words. Please remove them. ");
+  //  }
    
   else if(this.ctrl.post_url.valid==false){
   return alert("Post Url is required");
   }
-  else if(explicitWords.test(this.ctrl.post_url.value)){
-    return alert("Post Url contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_url.value)){
+  //   return alert("Post Url contains explicit words. Please remove them. ");
+  // }
 
   else if(this.ctrl.post_cat.valid==false){
   return alert("Post Category is required");
   }
   
-  else if(this.ctrl.post_headline.valid==false){
-  return alert("Post Headline is required");
-  }
-  else if(explicitWords.test(this.ctrl.post_headline.value)){
-    return alert("Post Headline contains explicit words. Please remove them. ");
-  }
- 
+
   else if(this.ctrl.post_desc.valid==false){
   return alert("Post Description is required");
   }
-  else if(explicitWords.test(this.ctrl.post_desc.value)){
-    return alert("Post Description contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_desc.value)){
+  //   return alert("Post Description contains explicit words. Please remove them. ");
+  // }
 
 
   else if(this.ctrl.post_question1.valid==false){
   return alert("Post Question 1 is required");
   }
-  else if(explicitWords.test(this.ctrl.post_question1.value)){
-    return alert("Post Question 1 contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_question1.value)){
+  //   return alert("Post Question 1 contains explicit words. Please remove them. ");
+  // }
 
 
   else if(this.ctrl.post_answer1.valid==false){
   return alert("Post Answer 1 is required");
   }
-  else if(explicitWords.test(this.ctrl.post_answer1.value)){
-    return alert("Post Answer 1 contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_answer1.value)){
+  //   return alert("Post Answer 1 contains explicit words. Please remove them. ");
+  // }
   
   else if(this.ctrl.post_question2.valid==false){
   return alert("Post Question 2 is required");
   }
-  else if(explicitWords.test(this.ctrl.post_question2.value)){
-    return alert("Post  Question 2 contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_question2.value)){
+  //   return alert("Post  Question 2 contains explicit words. Please remove them. ");
+  // }
 
   else if(this.ctrl.post_answer2.valid==false){
   return alert("Post Answer 2 is required");
   }
-  else if(explicitWords.test(this.ctrl.post_answer2.value)){
-    return alert("Post  Answer 2 contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_answer2.value)){
+  //   return alert("Post  Answer 2 contains explicit words. Please remove them. ");
+  // }
   
   else if(this.ctrl.post_question3.valid==false){
   return alert("Post Question 3 is required");
   }
-  else if(explicitWords.test(this.ctrl.post_question3.value)){
-    return alert("Post Question 3contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_question3.value)){
+  //   return alert("Post Question 3contains explicit words. Please remove them. ");
+  // }
 
   else if(this.ctrl.post_answer3.valid==false){
    
      return alert("Post Answer 3 is required"); 
      
   }
-  else if(explicitWords.test(this.ctrl.post_answer3.value)){
-    return alert("Post  Answer 3 contains explicit words. Please remove them. ");
-  }
+  // else if(explicitWords.test(this.ctrl.post_answer3.value)){
+  //   return alert("Post  Answer 3 contains explicit words. Please remove them. ");
+  // }
   
   else if(aValue!==b){
     return alert("Enter The Right Captch!")
  }
 
  
-  else if(this.postDataArray.some((isE: { post_title: any; post_url: any; post_meta_desc:any; })=>isE.post_title==this.ctrl.post_title.value || isE.post_url==this.ctrl.post_url.value || isE.post_meta_desc==this.ctrl.post_meta_desc.value)){
-    return alert("data is available in my database");
+  // else if(this.postDataArray.some((isE: { post_title: any; post_url: any; post_meta_desc:any; })=>isE.post_title==this.ctrl.post_title.value || isE.post_url==this.ctrl.post_url.value || isE.post_meta_desc==this.ctrl.post_meta_desc.value)){
+  //   return alert("data is available in my database");
     
-  }
+  // }
   
   else{
   
   const formData = new FormData();
   formData.append('user_key', this.user);
   formData.append('authorizedUserId',this.authorizedUserId);
-  formData.append('file', this.postArticle.get('post_headline').value);
+ 
   formData.append('lang_cat', this.postArticle.controls['lang_cat'].value);
-  formData.append('post_headline', this.postArticle.get('fileSource2').value);
+
   formData.append('post_title',this.postArticle.controls['post_title'].value);
   formData.append('post_meta_desc',this.postArticle.controls['post_meta_desc'].value);
   formData.append('post_meta_keyword',this.postArticle.controls['post_meta_keyword'].value);
   formData.append('post_url',this.postArticle.controls['post_url'].value);
   formData.append('post_cat',this.postArticle.controls['post_cat'].value);
-  formData.append('post_headline',this.postArticle.controls['post_headline'].value);
   formData.append('img1',this.postArticle.get('post_img').value);
   formData.append('post_desc',this.postArticle.controls['post_desc'].value);
   formData.append('post_question1',this.postArticle.controls['post_question1'].value);
@@ -424,8 +417,12 @@ formData.append('authorizedUserId',this.authorizedUserId);
 
   
   this.http.post(this.postUrl,formData).subscribe((data:any)=>{
-  alert("thanks your post successfully submitted !")
+  if(data){
+    alert("thanks your post successfully submitted !")
   this.startRefresh() 
+  }else{
+    console.log("data is not published")
+  }
  
 
   })
@@ -437,11 +434,12 @@ formData.append('authorizedUserId',this.authorizedUserId);
 
 
 
- 
+    
   
   htmlContent = '';
   upload:any;
-  config: AngularEditorConfig = {
+  
+  config = {
     editable: true,
     spellcheck: true,
     height: '15rem',
@@ -482,10 +480,6 @@ formData.append('authorizedUserId',this.authorizedUserId);
     ]
    
   };
-  
-
-
-
 
 
 }

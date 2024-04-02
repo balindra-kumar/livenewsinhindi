@@ -115,25 +115,13 @@
         
       </div>
 
-      <div class="form-outline">
-        <label *ngIf="language=='english'" class="form-label" >Write the headline of the post, which should be very important and should be of about 150 words.</label>
-        <label *ngIf="language=='hindi'" class="form-label">पोस्ट का हैडलाइन लिखिए जो बहुत ज्यादा important हो लगभग 150 वर्ड्स का होना चाहिए। </label>
-        <textarea class="form-control" rows="4" cols="1" formControlName="post_headline">
-
-        </textarea> 
-        <angular-editor id="editor1" formControlName="post_headline" (change)="onSelectedHeadline($event)"></angular-editor>
-      </div>
-
-
+     
 
       <div class="form-outline">
         <label *ngIf="language=='english'" class="form-label" >Write post description and share related post link</label>
               <label *ngIf="language=='hindi'" class="form-label">पोस्ट डिस्क्रिप्शन लिखे और रिलेटेड पोस्ट लिंक शेयर कर सकते है। </label>
-       <textarea class="form-control textarea"   formControlName="post_desc" rows="1" cols="1" >
-
-       </textarea>
-    
-       <!-- <angular-editor id="editor2" formControlName="post_desc"></angular-editor> -->
+      
+       <angular-editor [config]="config" formControlName="post_desc"></angular-editor> 
       
       </div>
 

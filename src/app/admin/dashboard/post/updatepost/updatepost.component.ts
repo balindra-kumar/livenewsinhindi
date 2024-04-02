@@ -6,14 +6,14 @@ import { NgIf } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+import {AngularEditorModule }  from '@kolkov/angular-editor';
 
 declare var $: any;
 
 @Component({
   selector: 'app-updatepost',
   standalone: true,
-  imports: [ ReactiveFormsModule,NgIf,HttpClientModule,CommonModule,RouterLink,],
+  imports: [ ReactiveFormsModule,NgIf,HttpClientModule,CommonModule,RouterLink,AngularEditorModule],
   templateUrl: './updatepost.component.html',
   styleUrl: './updatepost.component.css'
 })
@@ -23,7 +23,7 @@ export class UpdatepostComponent {
   blobData:any;
   language:any='english';
  
-  postDataUrl = "http://balindra.com/post/read.php";
+  postDataUrl = "https://hinditerm.com/demo/post/read.php";
   fileSource2:any;
   
   notAuthorized:any;
@@ -43,7 +43,6 @@ export class UpdatepostComponent {
   post_meta_keyword : new FormControl(''),
   post_url : new FormControl(''),
   post_cat : new FormControl(''),
-  post_headline : new FormControl(''),
   post_img : new FormControl(''),
   post_desc : new FormControl(''),
   post_date : new FormControl(''),
@@ -90,7 +89,6 @@ export class UpdatepostComponent {
         post_meta_keyword : new FormControl(''),
         post_url : new FormControl(''),
         post_cat : new FormControl(''),
-        post_headline : new FormControl(''),
         post_desc : new FormControl(''),
         post_date : new FormControl(''),
         post_question1 : new FormControl(''),
@@ -128,7 +126,7 @@ export class UpdatepostComponent {
   formData1.append('post_id',post_id)
   
    // this.http.get(`http://balindra.com/post/user-read.php?user_key=${this.user}`).subscribe((res:any)=>{
-     this.http.post('http://balindra.com/post/admin-single-post-read.php',formData1).subscribe((res:any)=>{
+     this.http.post('https://hinditerm.com/demo/post/admin-single-post-read.php',formData1).subscribe((res:any)=>{
      
      console.log(res.message)
       if(res.message=="Not Authorized User" || res.message=="Login failed" || res.message=="Student Record does not exist"){
@@ -164,7 +162,6 @@ export class UpdatepostComponent {
           this.updateArticle.controls['post_meta_keyword'].setValue(this.postDataArray.post_meta_keyword);
           this.updateArticle.controls['post_url'].setValue(this.postDataArray.post_url);
           this.updateArticle.controls['post_cat'].setValue(this.postDataArray.post_cat);
-          this.updateArticle.controls['post_headline'].setValue(this.postDataArray.post_headline);
           this.updateArticle.controls['post_desc'].setValue(this.postDataArray.post_desc);
           this.updateArticle.controls['post_question1'].setValue(this.postDataArray.post_question1);
           this.updateArticle.controls['post_answer1'].setValue(this.postDataArray.post_answer1);
@@ -195,7 +192,7 @@ export class UpdatepostComponent {
     headers.append('Access-Control-Allow-Origin', '*');
     const self = this;
   
-    this.http.get("http://balindra.com/post/"+webImgePath,{responseType:'blob'}).subscribe((res:Blob)=>{
+    this.http.get("https://hinditerm.com/demo/post/"+webImgePath,{responseType:'blob'}).subscribe((res:Blob)=>{
     console.log(res);
      
       var file = new File([res], webImgePath, {
@@ -229,7 +226,7 @@ export class UpdatepostComponent {
           post_meta_keyword:this.updateArticle.controls['post_meta_keyword'].value,
           post_url:this.updateArticle.controls['post_url'].value,
           post_cat:this.updateArticle.controls['post_cat'].value,
-          post_headline:this.updateArticle.controls['post_headline'].value,
+        
           post_desc:this.updateArticle.controls['post_desc'].value,
           post_question1:this.updateArticle.controls['post_question1'].value,
           post_answer1:this.updateArticle.controls['post_answer1'].value,
@@ -254,8 +251,7 @@ export class UpdatepostComponent {
         formData.append('post_meta_keyword',this.updateArticle.controls['post_meta_keyword'].value);
         formData.append('post_url',this.updateArticle.controls['post_url'].value);
         formData.append('post_cat',this.updateArticle.controls['post_cat'].value);
-        formData.append('post_headline',this.updateArticle.controls['post_headline'].value);
-       // formData.append('post_img',this.updateArticle.controls['post_img'].value);
+      
        
         formData.append('post_desc',this.updateArticle.controls['post_desc'].value);
         formData.append('post_question1',this.updateArticle.controls['post_question1'].value);
@@ -266,7 +262,7 @@ export class UpdatepostComponent {
         formData.append('post_answer3',this.updateArticle.controls['post_answer3'].value);
         formData.append('post_author',this.updateArticle.controls['post_author'].value);
         
-         this.http.post("http://balindra.com/post/update.php",formData).subscribe((updateValue:any)=>{
+         this.http.post("https://hinditerm.com/demo/post/update.php",formData).subscribe((updateValue:any)=>{
           console.log(updateValue,"data updated")
            alert("thanks your post successfully submitted !")
         })
@@ -278,52 +274,52 @@ export class UpdatepostComponent {
 
 
         
-       
-    }
- 
-    // htmlContent = '';
-    // upload:any;
-    // config: AngularEditorConfig = {
-    //   editable: true,
-    //   spellcheck: true,
-    //   height: '15rem',
-    //   minHeight: '5rem',
-    //   placeholder: 'Enter text here...',
-    //   translate: 'no',
-    //   uploadUrl: '',
-    //   //upload:(file: File) => { console.log('file', file)
-    //    //},
-    //   uploadWithCredentials: true,
-    //   sanitize: false,
-    //   enableToolbar: true,
-    //   showToolbar: true,
-    //   defaultParagraphSeparator: 'p',
-    //   defaultFontName: '',
-    //   defaultFontSize: '',
-    //   fonts: [
-    //     {class: 'arial', name: 'Arial'},
-    //     {class: 'times-new-roman', name: 'Times New Roman'},
-    //     {class: 'calibri', name: 'Calibri'},
-    //     {class: 'comic-sans-ms', name: 'Comic Sans MS'}
-    //   ],
+      }
     
-    //   customClasses: [
-    //     {
-    //       name: "quote",
-    //       class: "quote",
-    //     },
-    //     {
-    //       name: 'redText',
-    //       class: 'redText'
-    //     },
-    //     {
-    //       name: "titleText",
-    //       class: "titleText",
-    //       tag: "h1",
-    //     },
-    //   ]
+ 
+    htmlContent = '';
+    upload:any;
+    config ={
+      editable: true,
+      spellcheck: true,
+      height: '15rem',
+      minHeight: '5rem',
+      placeholder: 'Enter text here...',
+      translate: 'no',
+      uploadUrl: '',
+      //upload:(file: File) => { console.log('file', file)
+       //},
+      uploadWithCredentials: true,
+      sanitize: false,
+      enableToolbar: true,
+      showToolbar: true,
+      defaultParagraphSeparator: 'p',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        {class: 'arial', name: 'Arial'},
+        {class: 'times-new-roman', name: 'Times New Roman'},
+        {class: 'calibri', name: 'Calibri'},
+        {class: 'comic-sans-ms', name: 'Comic Sans MS'}
+      ],
+    
+      customClasses: [
+        {
+          name: "quote",
+          class: "quote",
+        },
+        {
+          name: 'redText',
+          class: 'redText'
+        },
+        {
+          name: "titleText",
+          class: "titleText",
+          tag: "h1",
+        },
+      ]
      
-    // };
+    };
 
 
     

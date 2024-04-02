@@ -64,11 +64,11 @@ getUrl:any ="https://hinditerm.com/demo/post/user-auth.php";
 
     if(loginUser=='Not Authorized User' && authorized_user!=res.authorized){
       alert("You are not varified user")
-      this.router.navigate(['/otpvarification'])
+      this.router.navigate(['/admin/otpvarification'])
     
     } if(loginUser=="Login successful" && authorized_user==res.authorized){
       alert("login successfully");
-      this.router.navigate(['/admin'])
+      this.router.navigate(['/admin/dashboard'])
 
     }else{
       alert("Please login with valid email id & password")

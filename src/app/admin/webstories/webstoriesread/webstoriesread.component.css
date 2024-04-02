@@ -1,0 +1,25 @@
+/* .table_data table{
+    width: 3000px;
+}
+.table_data{
+    overflow:scroll;
+    height: 300px;
+} */
+.table-one{
+   
+    height: 400px;
+    overflow:auto;
+    
+}
+.table-one table tr{
+    display: flex;
+}
+.table-one table tr:nth-child(even){
+    background:#a3ddda;
+}
+.table-one table tr td{
+    width: 200px;
+    border-bottom: 1px solid #e1e1e1;
+    vertical-align: bottom;
+    padding: 8px;
+}

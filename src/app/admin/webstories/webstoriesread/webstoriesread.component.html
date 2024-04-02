@@ -1,0 +1,101 @@
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>All Post </h2>
+    </div>
+    <div class="card-body">
+
+  
+<div class="table-one">
+<table >
+   
+        <tr class="bg-dark text-white">
+            <td>Delete</td>
+            <td>Update</td>
+            <td>id</td>
+            <td>web_title</td>
+            <td>web_meta_desc</td>
+            <td>web_meta_key</td>
+            <td>web_link</td>
+            <td>web_date</td>
+            <td>web_time</td>
+            <td>web_hour</td>
+            <td>web_heading1</td>
+            <td>web_img1</td>
+            <td>web_heading_desc1</td>
+            <td>web_heading2</td>
+            <td>web_img2</td>
+            <td>web_heading_desc2</td>
+            <td>web_heading3</td>
+            <td>web_img3</td>
+            <td>web_heading_desc3</td>
+            <td>web_heading4</td>
+            <td>web_img4</td>
+            <td>web_heading_desc4</td>
+            <td>web_heading5</td>
+            <td>web_img5</td>
+            <td>web_heading_desc5</td>
+            <td>web_heading6</td>
+            <td>web_img6</td>
+            <td>web_heading_desc6</td>
+            <td>web_heading7</td>
+            <td>web_img7</td>
+            <td>web_heading_desc7</td>
+            <td>web_heading8</td>
+            <td>web_img8</td>
+            <td>web_heading_desc8</td>
+            <td>web_heading9</td>
+            <td>web_img9</td>
+            <td>web_heading_desc9</td>
+            <td>web_approval</td>
+    </tr>
+  
+  
+    <tr *ngFor="let stories of webstoriesArrayData">
+        <td><a (click)="deleteWebStories(stories.web_id)">Delete</a></td>
+        <td><a (click)="redirectToSpecificPost(stories)">Update</a></td>
+        <td>{{stories.id}}</td>
+        <td>{{stories.web_meta_desc}}</td>
+        <td>{{stories.web_title}}</td>
+        <td>{{stories.web_meta_key}}</td>
+        <td>{{stories.web_link}}</td>
+        <td>{{stories.web_date}}</td>
+        <td>{{stories.web_time}}</td>
+        <td>{{stories.web_hour}}</td>
+        <td>{{stories.web_heading1}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img1}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc1.substr(0,50)}}...</td>
+        <td>{{stories.web_heading2}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img2}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc2.substr(0,50)}}...</td>
+        <td>{{stories.web_heading3}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img3}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc3.substr(0,50)}}...</td>
+        <td>{{stories.web_heading4}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img4}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc4.substr(0,50)}}...</td>
+        <td>{{stories.web_heading5}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img5}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc5.substr(0,50)}}...</td>
+        <td>{{stories.web_heading6}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img6}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc6.substr(0,50)}}...</td>
+        <td>{{stories.web_heading7}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img7}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc7.substr(0,50)}}...</td>
+        <td>{{stories.web_heading8}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img8}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc8.substr(0,50)}}...</td>
+        <td>{{stories.web_heading9}}</td>
+        <td><img src="http://balindra.com/post/{{stories.web_img9}}" style="width:40px" /></td>
+        <td>{{stories.web_heading_desc9.substr(0,50)}}...</td>
+        <td>{{stories.web_approval}}</td>
+       
+
+    </tr>
+  
+</table>
+</div>
+</div>
+</div>

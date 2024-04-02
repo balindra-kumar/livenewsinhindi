@@ -83,18 +83,12 @@
   
           </div>
   
-          <div class="form-outline">
-            <label class="form-label">Headline Description</label>
-            <angular-editor id="editor1" formControlName="post_headline" (change)="onSelectedHeadline($event)"></angular-editor>
-          </div>
-  
-          <!-- [config]="config" -->
-  
+       
   
           <div class="form-outline">
             <label class="form-label" for="form3Example9">Post Description</label>
-            <angular-editor id="editor2" formControlName="post_desc"></angular-editor>
            
+            <angular-editor [config]="config"  id="editor2" formControlName="post_desc"></angular-editor>
           </div>
   
   

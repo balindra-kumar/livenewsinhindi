@@ -77,6 +77,7 @@ export class PostComponent {
 
 
   ngOnInit():void{
+    console.log("login is =>", this.logiSuccess);
 
     if(this.logiSuccess.length==0){
       sessionStorage.clear();
@@ -87,9 +88,9 @@ export class PostComponent {
       sessionStorage.clear();
       this.router.navigate(['/login']);
     }
-  if(this.postArrayData.length==1){
+  if(this.postArrayData.length===1){
     
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/admin']);
   }
 
 
