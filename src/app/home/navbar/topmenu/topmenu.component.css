@@ -1,0 +1,47 @@
+.topbar-wrap{
+   
+   background:#191e25;
+}
+
+.navbar-nav-hori{
+    display: flex;
+    overflow-x: auto;
+    
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+/* For WebKit implementations, provide inertia scrolling */
+-webkit-overflow-scrolling: touch;
+/* We don't want internal inline elements to wrap */
+white-space: nowrap;
+/* Remove the default scrollbar for WebKit implementations */
+}
+.navbar-nav-hori::-webkit-scrollbar {
+    display: none;
+}
+
+ .navbar-nav-hori .nav-link{
+    color: #a5a3a3;
+    margin: 0 3px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    font-size: 14px;
+     border:1px solid #f5f5f540
+ }
+
+ .navbar_area .navbar-nav-hori .nav-link:hover{
+    background:#f9250f;
+   
+    color: #fff;
+ }
+
+
+
+@media(max-width:767px){
+   .navbar-nav-hori{
+      justify-content: flex-start !important;
+   }
+   .navbar-nav-hori .nav-link{
+      margin-bottom:0;
+   }
+}

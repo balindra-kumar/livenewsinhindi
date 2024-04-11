@@ -1,0 +1,330 @@
+<div class="thetop"></div>
+
+<app-navbar></app-navbar>
+<!--<app-top class="top_area"></app-top> -->
+<div class="flex-c" id="content-wrapper">
+  <div class="container" style="transform: none;">
+
+    <div class="row">
+      <div class="col-md-8 col-xs-12 p-0">
+        <main class="has-margin" id="main-wrapper"
+          style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+          <div class="theiaStickySidebar"
+            style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+            <div class="content-section section" id="content-section-1" name="Content Section 2">
+              <div class="widget HTML is-visible type-block" data-version="2" id="HTML14">
+                <div class="widget-title title-wrap">
+                  <h3 class="title">News</h3>
+                  <a routerLink="/search/label/Game" class="title-link">View all</a>
+                </div>
+                <div class="widget-content">
+                  <div class="content-block block-items">
+                    <div class="block-item item-0" *ngFor="let news of newsArrayData.slice(0,1)">
+                      <a title="{{news.post_title}}"
+                        class="entry-image-wrap is-image"
+                        routerLink="post/{{news.post_url}}">
+                        <span class="entry-image templateify-lazy"
+                         style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                        <span class="entry-category">Published:{{news.post_cat}}</span>
+                                              </a>
+                      <div class="entry-header">
+                        <h2 class="entry-title">
+                          <a  routerLink="post/{{news.post_url}}"  title="{{news.post_title}}">{{news.post_title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <span class="entry-author mi">
+                            <span class="sp">by</span>
+                            <span class="author-name">{{news.post_author}}</span>
+                          </span>
+                          <span class="entry-time mi">
+                            <span class="sp">-</span>
+                            <span class="entry-category" *ngIf="news.post_update_date==='' || news.post_update_date==null">Published:{{news.post_day|postdate}}</span>
+                            <span class="entry-category" *ngIf="news.post_update_date==='' && news.post_update_date==null">Updated:{{news.post_update_date|postdate}}</span>
+                          </span>
+                        </div>
+                        <span class="entry-excerpt excerpt">{{news.post_meta_desc}}</span>
+                      </div>
+                    </div>
+
+                    <div class="block-list">
+                      <div class="block-item item-1" *ngFor="let news of newsArrayData.slice(1,5)">
+                        <a title="{{news.post_title}}"
+                          class="entry-image-wrap sz-1 is-image" routerLink="{{news.post_url}}">
+                          <span class="entry-image templateify-lazy"
+                            style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                        </a>
+                        <div class="entry-header">
+                          <h2 class="entry-title">
+                            <a  routerLink="post/{{news.post_url}}"  title="{{news.post_title}}">{{news.post_title}}</a>
+                          </h2>
+                          <div class="entry-meta">
+                            <span class="entry-time mi">
+                              <time class="published"
+                                datetime="2018-05-23T19:51:00.000-07:00">{{news.post_day|postdate}}</time>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="widget HTML is-visible type-grid2" data-version="2" id="HTML7">
+                <div class="widget-title title-wrap">
+                  <h3 class="title">Technology</h3>
+                  <a routerLink="/search/label/lifestyle" class="title-link">View all</a>
+                </div>
+                <div class="widget-content">
+                  <div class="content-block grid2-items">
+
+                    <div class="grid2-item post" *ngFor="let news of techArrayData.slice(0,4)">
+                      <a title="{{news.post_title}}" class="entry-image-wrap is-image"
+                      routerLink="post/{{news.post_url}}">
+                        <span class="entry-image templateify-lazy"
+                          style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                        <span class="entry-category">{{news.post_cat}}</span>
+                      </a>
+                      <div class="entry-header">
+                        <h2 class="entry-title">
+                          <a  routerLink="post/{{news.post_url}}" 
+                            title="{{news.post_title}}">{{news.post_title}}</a>
+
+                        </h2>
+                        <div class="entry-meta">
+                          <span class="entry-author mi">
+                            <span class="sp">by</span>
+                            <span class="author-name">{{news.post_author}}</span>
+                          </span>
+                          <span class="entry-time mi">
+                            <span class="sp">-</span>
+                            <time class="published"
+                              datetime="2023-03-18T22:13:00.004-07:00">{{news.post_day|postdate}}</time>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="widget HTML is-visible column-style type-column" data-version="2" id="HTML8"
+                data-align="left">
+                <div class="widget-title title-wrap">
+                  <h3 class="title">Job</h3>
+                  <a routerLink="/search/label/Design" class="title-link">View all</a>
+                </div>
+                <div class="widget-content">
+                  <div class="content-block column-items">
+                    <div class="col-item cs item-0" *ngFor="let news of jobArrayData.slice(0,1)">
+                      <a class="entry-inner" routerLink="{{news.post_url}}"
+                      title="{{news.post_title}}" >
+                        <span class="{{news.post_title}}">
+                          <span class="entry-image templateify-lazy"
+                            style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                        </span>
+                        <div class="entry-header entry-info">
+                          <span class="entry-category">{{news.post_cat}}</span>
+                          <h2 class="entry-title">{{news.post_title}}</h2>
+                          <div class="entry-meta">
+                            <span class="entry-author mi">
+                              <span class="sp">by</span>
+                              <span class="author-name">{{news.post_author}}</span>
+                            </span>
+                            <span class="entry-time mi">
+                              <span class="sp">-</span>
+                              <time class="published"
+                                datetime="2022-06-11T22:32:00.000-07:00">{{news.post_day|postdate}}</time>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-item item-1" *ngFor="let news of jobArrayData.slice(1,4)">
+                      <a  title="{{news.post_title}}"  class="entry-image-wrap sz-1 is-image"
+                      routerLink="{{news.post_url}}">
+                        <span class="entry-image templateify-lazy"
+                          style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                      </a>
+                      <div class="entry-header">
+                        <h2 class="entry-title">
+                          <a  routerLink="post/{{news.post_url}}" 
+                            title="{{news.post_title}}">{{news.post_title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <span class="entry-time mi">
+                            <time class="published"
+                              datetime="2018-05-23T19:48:00.000-07:00">{{news.post_day|postdate}}</time>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="widget HTML is-visible column-style type-column" data-version="2" id="HTML8"
+                data-align="left">
+                <div class="widget-title title-wrap">
+                  <h3 class="title">Business</h3>
+                  <a class="title-link">View all</a>
+                </div>
+                <div class="widget-content" data-shortcode="{getPosts} $results={4} $label={Design} $type={col-left}">
+                  <div class="content-block column-items">
+                    <div class="col-item cs item-0" *ngFor="let news of busiArrayData.slice(0,1)">
+                      <a class="entry-inner"
+                      routerLink="{{news.post_url}}"
+                      title="{{news.post_title}}" >
+                        <span class="entry-image-wrap before-mask is-image">
+                          <span class="entry-image templateify-lazy"
+                           
+                            style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                        </span>
+                        <div class="entry-header entry-info">
+                          <span class="entry-category">{{news.post_cat}}</span>
+                          <h2 class="entry-title">{{news.post_title}}</h2>
+                          <div class="entry-meta">
+                            <span class="entry-author mi">
+                              <span class="sp">by</span>
+                              <span class="author-name">{{news.post_author}}</span>
+                            </span>
+                            <span class="entry-time mi">
+                              <span class="sp">-</span>
+                              <time class="published"
+                                datetime="2022-06-11T22:32:00.000-07:00">{{news.post_day|postdate}}</time>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-item item-1" *ngFor="let news of busiArrayData.slice(1,4)">
+                      <a  title="{{news.post_title}}" class="entry-image-wrap sz-1 is-image"
+                      routerLink="{{news.post_url}}">
+                        <span class="entry-image templateify-lazy"
+                         
+                          style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                      </a>
+                      <div class="entry-header">
+                        <h2 class="entry-title">
+                          <a  routerLink="post/{{news.post_url}}" 
+                            title="{{news.post_title}}">{{news.post_title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <span class="entry-time mi">
+                            <time class="published"
+                              datetime="2018-05-23T19:48:00.000-07:00">{{news.post_day|postdate}}</time>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="widget HTML is-ad" data-version="2" id="HTML17">
+                <div class="widget-content">
+                  <a class="ads-here" routerLink="#">Responsive Advertisement</a>
+                </div>
+              </div>
+            </div>
+            <div class="main section" name="Main Posts">
+              <div class="widget Blog flex-col" data-version="2" id="Blog1">
+                <div class="title-wrap main-title">
+                  <h3 class="title">Health</h3>
+                  <a class="title-link" routerLink="/search">View all</a>
+                </div>
+                <div class="blog-posts index-post-wrap flex-col">
+                  <article class="blog-post hentry index-post post-0" *ngFor="let news of healthArrayData.slice(0,6)">
+                    <a class="entry-image-wrap is-image"
+                    routerLink="{{news.post_url}}"
+                    title="{{news.post_title}}">
+                      <span class="entry-image templateify-lazy"
+                       
+                        style="background-image:url(http://balindra.com/post/{{news.post_img}})"></span>
+                      <span class="entry-category">{{news.post_cat}}</span>
+                    </a>
+                    <div class="entry-header">
+                      <h2 class="entry-title">
+                        <a  routerLink="post/{{news.post_url}}" 
+                            title="{{news.post_title}}">{{news.post_title}}</a>
+                      </h2>
+                      <div class="entry-meta">
+                        <span class="entry-author mi">
+                          <span class="by sp">by</span>
+                          <span class="author-name">{{news.post_author}}</span>
+                        </span>
+                        <span class="entry-time mi">
+                          <span class="sp">-</span>
+                          <time class="published"
+                            datetime="2023-03-18T22:13:00-07:00">{{news.post_day|postdate}}</time>
+                        </span>
+                      </div>
+                      <p class="entry-excerpt excerpt my-3"> {{news.post_meta_desc.substr(0,170)}}..</p>
+                      <a  routerLink="post/{{news.post_url}}" 
+                      title="{{news.post_title}}">Read More</a>
+                    </div>
+                  </article>
+
+                </div>
+               
+              </div>
+            </div>
+            <div class="content-section section" id="content-section-2" name="Content Section 3">
+              <div class="widget HTML is-ad" data-version="2" id="HTML18">
+                <div class="widget-content">
+                  <a class="ads-here" routerLink="#">Responsive Advertisement</a>
+                </div>
+              </div>
+
+              <div class="widget HTML is-visible type-grid" data-version="2" id="HTML10">
+                <div class="widget-title title-wrap">
+                  <h3 class="title">Science</h3>
+                  <a routerLink="/search/label/living" class="title-link">View all</a>
+                </div>
+                <div class="widget-content"
+                 >
+                  <div class="content-block grid-items">
+                    <div class="grid-item post" *ngFor="let science of scienceArrayData">
+                      <a  title="{{science.post_title}}"
+                        class="entry-image-wrap is-image"
+                        routerLink="post/{{science.post_url}}">
+                        <span class="entry-image templateify-lazy"
+                         
+                          style="background-image:url(http://balindra.com/post/{{science.post_img}})"></span>
+                        <span class="entry-category">{{science.post_cat}}</span>
+                      </a>
+                      <div class="entry-header">
+                        <h2 class="entry-title">
+                          <a  routerLink="post/{{science.post_url}}" 
+                            title="{{science.post_title}}">{{science.post_title}}</a>
+                        </h2>
+                        <div class="entry-meta">
+                          <span class="entry-time mi">
+                            <time class="published"
+                              datetime="2022-06-11T22:32:00.000-07:00">{{science.post_day|postdate}}</time>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <router-outlet></router-outlet>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+      <div class="col-md-4 p-0">
+
+        <!-- <app-aside></app-aside> -->
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- <app-footer></app-footer> -->

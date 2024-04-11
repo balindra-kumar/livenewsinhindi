@@ -1,0 +1,9 @@
+<h1>All Sitemap Heres</h1>
+<ul *ngFor="let item of postItems">
+    <li><span class="text-bold">{{item.postTitle}}</span>
+        <ul *ngFor="let relatedPost of item.postStroies" class="bg-light">
+            <li>{{relatedPost.post_title}} </li>
+           </ul>
+    </li>
+
+</ul>

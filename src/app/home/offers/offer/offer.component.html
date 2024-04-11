@@ -1,0 +1,27 @@
+<div class="offer-area-container">
+    <div class="row g-0 align-items-center" *ngFor="let item of arrayData.slice(0, 1); let i=index">
+        <div class="col-md-4">
+            <div class="offer-img-area">
+                <div class="offer-cat">
+                   {{item.product_offer_price}}
+                </div>
+
+                <img class="img-fluid"
+                    src="http://balindra.com/post/{{item.product_img}}">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="offer-content">
+                <h2>{{item.product_name}}</h2>
+                <small>{{item.product_cat}}</small>
+                <p>{{item.product_desc}}</p>
+                
+                <ul class="offer-list-area">
+                    <li><a href="{{item.product_link}}" target="_blank">Read More</a></li>
+                  
+                </ul>
+                <p><a href="{{item.product_link}}" class="offer-learn-more" target="_blank">See More</a></p>
+            </div>
+        </div>
+    </div>
+</div>

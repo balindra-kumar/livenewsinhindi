@@ -1,0 +1,74 @@
+<div class="container">
+<div class="row">
+    
+    
+  </div>
+</div>
+<div class="flex-c" id="featured-wrapper">
+	<div class="featured container row-x1 section" id="featured" name="Featured Posts">
+	   <div class="widget HTML is-visible type-feat3" data-version="2" id="HTML11">
+		  <div class="widget-content">
+			 <div class="featured-items">
+				@for(topnews of topPostArray.slice(0,1); track topnews.id){
+				<div class="featured-item cs item-0" *ngFor="let topnews of topPostArray.slice(0,1)">
+				   <a class="entry-inner" routerLink="post/{{topnews.post_url}}" title="{{topnews.post_title}}">
+					  <span class="entry-image-wrap before-mask is-image"><span class="entry-image templateify-lazy" style="background-image:url(http://balindra.com/post/{{topnews.post_img}})"></span></span>
+					  <div class="entry-header entry-info">
+						 <span class="entry-category">{{topnews.post_cat}}</span>
+						 <h2 class="entry-title">{{topnews.post_title}}</h2>
+						 <div class="entry-meta"><span class="entry-author mi"><span class="sp">by</span><span class="author-name">{{topnews.post_author}}</span></span><span class="entry-time mi"><span class="sp">-</span>
+							
+							<span *ngIf="topnews.post_update_date===topnews.post_day">Published:{{topnews.post_day|postdate}}</span>
+							<span *ngIf="topnews.post_update_date!==topnews.post_day">Updated:{{topnews.post_update_date|postdate}}</span>
+						</span></div>
+					  </div>
+					
+					 
+				   </a>
+				</div>
+			}@empty {
+				<div>No data..</div>
+			}
+				
+				<div class="featured-grid recent_post">
+					@for(post of topPostArray.slice(1,5); track post.id){
+
+				   <div class="featured-item cs item-1">
+					  <a class="entry-inner" routerLink="post/{{post.post_url}}" title="Cheap Smart Phone Could And Help You Old Food Safe">
+						 <span class="entry-image-wrap before-mask is-image"><span class="entry-image templateify-lazy" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_yx38VS3CQJp5Mze6hZYePGBciy_adQIA5BxG96bPSxsyVVkvjZMqEhnE7pCJLHRnkC0PhM1CX3xjPhmy2iJNstHNj7q_VyJjpKLTM6zyqi4XPXgbk38Yh4pP3_5q7cd1H6MpRGK6K1PR_vEt1B8S172ZqIG68-4BAe11VxX2Tyfq8efMUtOwxpvt/w72-h72-p-k-no-nu/blog8.jpg" style="background-image:url(http://balindra.com/post/{{post.post_img}})"></span></span>
+						 <div class="entry-header entry-info">
+							<span class="entry-category">{{post.post_cat}}</span>
+							<h2 class="entry-title">{{post.post_title}}</h2>
+							<div class="entry-meta">
+								<span class="entry-time mi">
+								@if(post.post_update_date===post.post_day){
+								<span>Published:{{post.post_day|postdate}}</span>
+								}
+								@if(post.post_update_date!==post.post_day){
+							 <span>
+								Updated:{{post.post_update_date|postdate}}</span>}
+							</span>
+								
+						</div>
+						 </div>
+					  </a>
+				   </div>
+				}@empty {
+					<div>No data..</div>
+				}
+
+				</div>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+ </div>
+
+ <div class="flex-c" id="header-ads-wrap">
+	<div class="header-ads container row-x1 section" id="header-ads" name="Header ADS">
+	   <div class="widget HTML" data-version="2" id="HTML1">
+		  <div class="widget-content"> <a class="ads-here" routerLink="https://templateify.com/">Responsive Advertisement</a> </div>
+	   </div>
+	</div>
+ </div>
+ <router-outlet></router-outlet>

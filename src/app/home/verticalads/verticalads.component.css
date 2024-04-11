@@ -1,0 +1,21 @@
+@media(min-width:992px){
+    .vertical-ads{
+       
+        height: 100%;
+        position: fixed;
+        background: green;
+        z-index: 10001;
+        height: 109vh;
+    }
+    .vertical-ads.right{
+        float: right;
+        right: -3px;
+        top: 0;
+    }
+}
+
+@media(max-width:767px){
+    .vertical-ads{
+        display: none;
+    }
+}

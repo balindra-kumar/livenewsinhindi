@@ -1,0 +1,159 @@
+<div class="header_area">
+  <div class="text-center"> <img src="assets/img/ads.jpg" alt="" class="width_100_mobile"/></div>
+
+
+<div class="top_main_header">
+  <div class="lang">
+    <div class="container">
+     
+      <div class="row">
+       
+        <div class="col-md-12">
+          
+        <ul class="list-inline justify-content-center">
+         
+           <li class="nav-item">
+            <a class="nav-link lang-select"  data-lang="en">ENGLISH</a>
+          </li>
+  
+          
+          <li class="nav-item">
+            <a class="nav-link lang-select" data-lang="ml">தமிழ்</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lang-select" data-lang="hi">हिंदी</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lang-select" data-lang="bn">বাংলা</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lang-select" data-lang="gu">ગુજરાતી</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lang-select" data-lang="mr">मराठी</a>
+          </li>  
+          
+          <!-- <li><a href="#googtrans(en|en)" class="lang-en lang-select" data-lang="en">Eng</a></li>
+      <li><a href="#googtrans(en|hi)" class="lang-es lang-select" data-lang="hi">Hindi</a></li>
+      <li><a href="#googtrans(en|bn)" class="lang-es lang-select" data-lang="bn">Bengali</a></li>
+      <li><a href="#googtrans(en|gu)" class="lang-es lang-select" data-lang="gu">Gujrati</a></li>
+      <li><a href="#googtrans(en|ta)" class="lang-es lang-select" data-lang="ta">Tamilnadu</a></li> 
+       -->
+      </ul>
+        </div>
+     
+      </div>
+      
+       </div>
+      </div>
+      <div class="clearfix"></div>
+       
+
+ <div class="top-nav  d-sm-none d-none d-md-block">
+ <div class="container">
+  <div class="row align-items-center">
+    <div class="col-md-3 p-0">
+      <p class="mt-2 text-white btn btn-sm"><img src="assets/img/time.png" alt="News" class="icon_size"/> 
+        {{currentDate}} Time : 
+       
+          {{ currentTime | date:'hh:mm:ss a' }}
+      
+      </p>
+        <p class="text-grey btn btn-sm"><img src="assets/img/news.png" alt="News" class="icon_size"/> <span>EPAPER | </span>
+          TODAY’S PAPER</p>
+         
+    </div>
+    <div class="col-md-5 text-center">
+      <h2><a class="navbar-brand1" routerLink="http://balindra.com"><span>Live News in HIndi</span></a></h2>
+        <p class="text-center mt-2 text-bold text-grey">JOURNALISM OF COURAGE</p>
+      
+     
+    </div>
+    <div class="col-md-4">
+      <div class="float-right header-right navigation_icon">
+      <ul class="list-inline float-right">
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="game" routerLinkActive="active"><img src="assets/img/games.png"> Games</a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="software" routerLinkActive="active"><img src="assets/img/software.png"> Software</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login" routerLinkActive="active"><img src="assets/img/user.png"> Sing In</a>
+        </li>
+      
+      </ul>
+      <div class="clearfix row-flex">
+        <ul class="list-inline float-right">
+       
+          <!-- <li class="nav-item" *ngIf="!userArrayData.length">
+            <a routerLink="#" class="profile_user">
+              <img src='http://balindra.com/post/{{userArrayData.user_img}}' class="img-circle" width="60"/>
+              
+            </a>
+          </li> -->
+        
+        </ul>
+       
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div> 
+<app-topmenu></app-topmenu>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the rest of the page to see this option in action.</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary d-md-none d-lg-none d-sm-block d-xs-block">
+  <div class="container">
+    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </a>
+
+     <a class="navbar-brand" routerLink="#">Live News In Hindi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="#">Technology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Business </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Science </a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link">Health</a>
+        </li>
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+
+
+  <app-general></app-general>
+</div>
+</div>

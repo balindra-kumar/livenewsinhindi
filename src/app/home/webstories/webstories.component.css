@@ -1,0 +1,23 @@
+/* .web_btn{
+    position: absolute;
+    z-index: 2;
+}
+.web_btn{
+    display: flex;
+    align-items: center;
+} */
+
+.web_btn{
+    margin:auto;
+    position: absolute;
+    top: 0;
+    bottom:16px;
+    left:0;
+    right:0;
+    width:200px;
+    z-index: 2;
+}
+.web_btn_content{
+position: absolute;
+bottom:0;
+}

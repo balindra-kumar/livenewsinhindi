@@ -1,0 +1,188 @@
+.top-nav .dropdown-megamenu {
+    position: static;
+  }
+  @media (min-width: 767px) {
+    .dropdown-container {
+        width: 98%;
+        left: 1%;
+        padding: 20px;
+    }
+    .width_100_mobile{
+      width: 700px;
+    }
+  }
+  .top-nav .nav-link{
+    color: #3a3838;
+    font-size: 15px;
+    font-weight: 600;
+   
+  }
+  .btn-danger {
+    font-size: 13px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link{
+    color: #3a3838 !important;
+  }
+  .top-nav .navbar-nav .nav-link {
+    border: 0;
+    padding: 0px 10px;
+    margin: 0 3px;
+    padding-left:0;
+   
+    font-size: 14px;
+ 
+    font-weight: 600;
+    transition: all 0.4s ease-in-out;
+}
+
+.no-margin{
+  margin:0 !important;
+  border-right: none !important;
+}
+.top-nav .navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(0deg, #f9250f 54%, #2e2e2d 53%);
+  padding: 17px 6px;
+  border-radius: 5px;
+  color: #fff;
+}
+.top-nav .navbar-brand span{
+  background: #fff;
+  color: #000;
+  border-radius: 1px;
+  padding: 8px;
+  border-radius: 3px;
+  font-family: fantasy;
+}
+.top-nav .navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+ 
+  background: #fff;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+
+
+.list-inline li{
+  float:left;
+}
+.list-inline li a{
+  padding-left: 0;
+  color: #444141;
+}
+
+.lang{
+  
+  border-bottom: 1px dashed #c5c5c5;
+}
+
+.lang .list-inline{
+  display: flex;
+  overflow-x: auto;
+  
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+/* For WebKit implementations, provide inertia scrolling */
+-webkit-overflow-scrolling: touch;
+/* We don't want internal inline elements to wrap */
+white-space: nowrap;
+/* Remove the default scrollbar for WebKit implementations */
+}
+.lang .list-inline::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+.lang .list-inline li a{
+ font-size: 14px;
+ padding: 0 10px;
+}
+.nav-item a:hover{
+  color: #f9250f
+}
+.top-nav{
+  background: #191e25;
+
+}
+.text-grey{
+  color: #a9a6a6 
+}
+.float-right{
+  float: right;
+}
+.header-right li a{
+  color: #dbd9d9;
+  font-weight: 500;
+}
+.btn-xs{
+  padding: 3px;
+    font-size: 13px;
+    background: #e53a28;
+    margin-top: 4px;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar-toggler-icon{
+	display: block;
+	width: 25px;
+	height: 4px;
+	background-color: #e58139;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0 auto 3px;
+  transition: background-color 0.2s;
+}
+.img-circle{
+  border-radius: 40px;
+  height: 40px;
+  width: 40px !important;
+  display: table;
+  text-align: center;
+  margin: 1px auto;
+  margin-right: 8px;
+  border: 1px solid #fff;
+}
+.profile_heading{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  
+}
+.profile_user{
+  display: flex;
+    align-items: center;
+    margin: 7px;
+}
+.align-items-center{
+  align-items: center;
+}
+@media(max-width:767px){
+  .navbar{
+    padding: 2px 0;
+  }
+}
+
+.top-nav li a:hover{
+  color:#f9250f;
+}
+.active{
+  color:yellow !important;
+}

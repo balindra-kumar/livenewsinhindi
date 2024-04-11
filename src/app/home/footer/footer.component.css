@@ -1,0 +1,18 @@
+.scrolltop {
+   
+    margin: 0 auto;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+	cursor: pointer;
+	z-index: 10000;
+    width: 50px;
+    text-align: center;
+    font-size: 12px;
+	border-radius: 3px;
+	
+}
+.scrolltop i{
+	color: #000;
+	font-size:20px;
+}

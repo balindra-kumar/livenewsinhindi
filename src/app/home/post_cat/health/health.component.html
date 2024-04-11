@@ -1,0 +1,51 @@
+
+
+<h4 class="text-danger text-bold px-2">Latest News</h4>
+<div class="flex-c" id="featured-wrapper">
+	<div class="featured container row-x1 section" id="featured" name="Featured Posts">
+	   <div class="widget HTML is-visible type-feat3" data-version="2" id="HTML11">
+		  <div class="widget-content">
+			 <div class="featured-items">
+				
+				
+				<div class="featured-grid featured-items2">
+				   <div class="featured-item cs item-1" *ngFor="let post of displayedPosts">
+					  <a class="entry-inner" routerLink="post/{{post.post_url}}" title="Cheap Smart Phone Could And Help You Old Food Safe">
+						 <span class="entry-image-wrap before-mask is-image"><span class="entry-image templateify-lazy" data-image="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_yx38VS3CQJp5Mze6hZYePGBciy_adQIA5BxG96bPSxsyVVkvjZMqEhnE7pCJLHRnkC0PhM1CX3xjPhmy2iJNstHNj7q_VyJjpKLTM6zyqi4XPXgbk38Yh4pP3_5q7cd1H6MpRGK6K1PR_vEt1B8S172ZqIG68-4BAe11VxX2Tyfq8efMUtOwxpvt/w72-h72-p-k-no-nu/blog8.jpg" style="background-image:url(http://balindra.com/post/{{post.post_img}})"></span></span>
+						 <div class="entry-header entry-info">
+							<span class="entry-category">{{post.post_cat}}</span>
+							<h2 class="entry-title">{{post.post_title}}</h2>
+							<div class="entry-meta"><span class="entry-time mi">
+								<span *ngIf="post.post_update_date===post.post_day">Published:{{post.post_day|postdate}}</span>
+							<span *ngIf="post.post_update_date!==post.post_day">Updated:{{post.post_update_date|postdate}}</span>
+							</span></div>
+						 </div>
+					  </a>
+				   </div>
+				 
+
+				</div>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+ </div>
+ <div class="flex-c" id="header-ads-wrap">
+<div class="row">
+	<div class="col-md-12">
+		<ul class="pagination align-items-center">
+			<li class="nav-item"><a class="nav-link"> <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="btn btn-default border-1 rounded-0">&laquo; Previous </button></a></li>
+			<li class="page-item" *ngFor="let pageNumber of pageNumbers"><a class="page-link" (click)="goToPage(pageNumber)" [class.active]="pageNumber===currentPage">{{pageNumber}}</a></li>
+			<li class="nav-item"><a class="nav-link"> <button (click)="goToNextPage()" [disabled]="currentPage === totalPages" class="btn btn-default border-1 rounded-0">&raquo; Next</button></a></li>
+		  </ul>
+	</div>
+</div>
+</div>
+ <div class="flex-c" id="header-ads-wrap">
+	<div class="header-ads container row-x1 section" id="header-ads" name="Header ADS">
+	   <div class="widget HTML" data-version="2" id="HTML1">
+		  <div class="widget-content"> <a class="ads-here" routerLink="#">Responsive Advertisement</a> </div>
+	   </div>
+	</div>
+ </div>
+ <router-outlet></router-outlet>

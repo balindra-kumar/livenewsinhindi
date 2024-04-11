@@ -1,0 +1,128 @@
+<footer class="flex-col" id="footer-wrapper">
+	<div class="primary-footer flex-c">
+		<div class="container row-x1">
+
+			<div class="footer-widgets has-border">
+				<div class="footer-section templateify-section flex-col section" id="footer-col-1" name="Footer Left">
+					<div class="widget Label" data-version="2" id="Label3">
+						<div class="widget-title">
+							<h3 class="title">Categories</h3>
+						</div>
+						<div class="widget-content list-label">
+							<ul class="list-style" (click)="scrolltop()">
+								<li><a routerLink="news" class="label-name has-count">News
+										<span class="label-count count-style">({{newsArrayData.length}})</span></a></li>
+								<li><a routerLink="technology" class="label-name has-count">Technology
+										<span class="label-count count-style">({{techArrayData.length}})</span></a></li>
+								<li><a routerLink="jobs" class="label-name has-count">Jobs
+										<span class="label-count count-style">({{jobArrayData.length}})</span></a></li>
+								<li><a routerLink="health" class="label-name has-count">Health
+										<span class="label-count count-style">({{healthArrayData.length}})</span></a></li>
+								<li><a routerLink="meditation" class="label-name has-count">Meditation
+										<span class="label-count count-style">(7)</span></a></li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="widget Label" data-version="2" id="Label4">
+						<div class="widget-title">
+							<h3 class="title">Main Tags</h3>
+						</div>
+						<div class="widget-content cloud-label">
+							<ul class="cloud-style" (click)="scrolltop()">
+								<li><a  class="label-name btn has-count">Business
+										<span class="label-count count-style">({{busiArrayData.length}})</span></a></li>
+								<li><a routerLink="science" class="label-name btn has-count">Science
+										<span class="label-count count-style">({{scienceArrayData.length}})</span></a></li>
+								<li><a routerLink="education" class="label-name btn has-count">Education
+										<span class="label-count count-style">(6)</span></a></li>
+								<li><a routerLink="politics" class="label-name btn has-count">Politics
+										<span class="label-count count-style">(5)</span></a></li>
+								<li><a routerLink="market" class="label-name btn has-count">Market
+										<span class="label-count count-style">(6)</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-section templateify-section flex-col section" id="footer-col-2" name="Footer Center">
+					<div class="widget HTML type-side2" data-version="2" id="HTML16">
+						<div class="widget-title">
+							<h3 class="title">Latest Posts</h3>
+						</div>
+						<div class="widget-content">
+							<div class="side-items" (click)="scrolltop()">
+								<div class="side-item item-0" *ngFor="let post of postArrayData.slice(0,3).reverse()">
+									<a
+										title="{{post.post_title}}"
+										class="entry-image-wrap sz-1 is-image">
+										<span
+											class="entry-image templateify-lazy"
+											style="background-image:url('http://balindra.com/post/{{post.post_img}}')"></span></a>
+									
+										<div class="entry-header">
+										<h2 class="entry-title"><a
+												routerLink="post/{{post.post_url}}"
+												title="{{post.post_title}}">{{post.post_title}}</a></h2>
+										<div class="entry-meta"><span class="entry-time mi"><time class="published"
+													>{{post.post_day|postdate}}</time></span></div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-section templateify-section flex-col section" id="footer-col-3" name="Footer Right">
+					<div class="widget PopularPosts" data-version="2" id="PopularPosts1" (click)="scrolltop()">
+						<div class="widget-title">
+							<h3 class="title">Science News</h3>
+						</div>
+						<div class="widget-content side-items my-2" *ngFor="let science of scienceArrayData">
+							<div class="side-item"> 
+								<a class="entry-image-wrap sz-1 is-image" routerLink="post/{{science.post_url}}"
+									title="{{science.post_title}}"><span
+										class="entry-image templateify-lazy"
+										style="background-image:url(http://balindra.com/post/{{science.post_img}})"></span>
+								</a>
+								<div class="entry-header">
+									<h2 class="entry-title">
+										<a routerLink="post/{{science.post_url}}"
+											title="{{science.post_title}}">{{science.post_url}}</a></h2>
+									<div class="entry-meta">
+										<p class="published">{{science.post_author}} || Date: {{science.post_day|postdate}}</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bar flex-c">
+		<div class="container row-x1 flex-sb">
+			<div class="footer-copyright" id="footer-copyright"> <span class="copyright-text">Design by <a
+						id="mycontent" title="" rel="dofollow"
+						style="display: inline-block!important; font-size: inherit!important; color:#1a73e8!important; visibility: visible!important;z-index:99!important; opacity: 1!important;position:relative!important;font-weight: 700;">India News Today</a></span>
+			</div>
+			<div class="footer-menu section" id="footer-menu" name="Footer Menu">
+				<div class="widget LinkList" data-version="2" id="LinkList204">
+					<ul class="link-list" (click)="scrolltop()">
+						<li><a>Home</a></li>
+						<li><a>About Us</a></li>
+						<li><a>Contact Us</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<div class="scroll icon scrolltop text-right"  (click)="scrolltop()"><img src="../../../../assets/img/scrolltotop.gif"
+		width="30" style="width:30px !important;"></div>
+	<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,136 @@
+
+.offer-area-container{
+    background: #d0c3e7;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.offer-area-container{
+    background: #d0c3e7;
+    border-radius: 2px;
+    overflow: hidden;
+    position:relative;
+}
+.offer-content{
+   
+    padding: 10px;
+  
+/* margin: 10px;
+border-radius: 10px;
+
+box-shadow: 0 4px 3px #000; */
+}
+.offer-content h2{
+    font-size: 18px;
+font-weight: 600;
+/* text-shadow: 0 3px 0px #00000026; */
+color: #212529;
+border-bottom: 1px dashed #80808078;
+padding-bottom: 8px;
+}
+.offer-img-area{
+    border-radius: 10px;
+overflow: hidden;
+margin: 14px;
+}
+.offer-list-area{
+    padding-left: 0;
+}
+.offer-img-area:hover{
+    animation:mymove 1s infinite linear alternate;
+}
+
+@keyframes mymove{
+    20% {
+-webkit-transform: rotate3d(0, 0, 1, 10deg);
+transform: rotate3d(0, 0, 1, 10deg);
+}
+
+40% {
+-webkit-transform: rotate3d(0, 0, 1, -7deg);
+transform: rotate3d(0, 0, 1, -7deg);
+}
+
+60% {
+-webkit-transform: rotate3d(0, 0, 1, 5deg);
+transform: rotate3d(0, 0, 1, 5deg);
+}
+80% {
+-webkit-transform: rotate3d(0, 0, 1, -5deg);
+transform: rotate3d(0, 0, 1, -5deg);
+}
+100% {
+-webkit-transform: rotate3d(0, 0, 1, 0);
+transform: rotate3d(0, 0, 1, 0);
+}
+}
+
+
+
+.offer-list-area li{
+    background: #a887e3;
+border-radius: 16px;
+list-style: none;
+display: inline-block;
+padding: 3px 10px;
+margin: 5px;
+font-size: 14px;
+color: #fff;
+font-weight: 400;
+border: 1px dashed #8063b3;
+transition:all 0.4s ease-in-out;
+}
+.offer-list-area li:hover{
+    background:green;
+    cursor: pointer;
+}
+
+
+.offer-learn-more{
+    background: #5c546a;
+right: 0;
+position: absolute;
+bottom: 13px;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+padding: 3px 5px;
+display: block;
+color: #fff;
+padding-bottom: 5px;
+text-decoration: none;
+transition: all 0.4s ease-in-out;
+}
+.offer-learn-more:hover{
+  
+padding-left: 10px;
+background: #cf1212;
+color: #fff;
+}
+.offer-cat{
+    position: relative;
+background: orange;
+top: 17px;
+width: 130px;
+padding: 2px 5px;
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+text-align: center;
+border-bottom: 1px dashed #0000002e;
+border-left: 1px dashed #0006;
+border-right: 1px dashed #0003;
+margin: 0 auto;
+display: table;
+z-index: 1;
+color: #fff;
+
+}
+@media(max-width:767px){
+    .offer-learn-more{
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    
+    border-radius: 4px;
+    
+    }
+}

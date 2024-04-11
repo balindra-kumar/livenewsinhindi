@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { Title,Meta } from '@angular/platform-browser';
-import { RouterLink,ActivatedRoute,NavigationEnd } from '@angular/router';
+import {ActivatedRoute,NavigationEnd } from '@angular/router';
 import { Injectable, Inject } from '@angular/core';
 import { filter } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,RouterLink],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

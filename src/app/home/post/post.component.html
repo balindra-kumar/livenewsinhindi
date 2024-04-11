@@ -1,0 +1,254 @@
+
+<div class="widget Blog" data-version="2">
+	<div class="blog-posts item-post-wrap flex-col">
+		<article class="blog-post hentry item-post flex-col">
+			<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://webify-templateify.blogspot.com/2023/03/cheap-smart-phone-could-and-help-you_18.html"},"headline":"Cheap Smart Phone Could And Help You Old Food Safe","description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\u0026#39;s standard dummy text ever...","datePublished":"2023-03-18T22:13:00-07:00","dateModified":"2023-03-18T22:13:13-07:00","image":{"@type":"ImageObject","url":"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_yx38VS3CQJp5Mze6hZYePGBciy_adQIA5BxG96bPSxsyVVkvjZMqEhnE7pCJLHRnkC0PhM1CX3xjPhmy2iJNstHNj7q_VyJjpKLTM6zyqi4XPXgbk38Yh4pP3_5q7cd1H6MpRGK6K1PR_vEt1B8S172ZqIG68-4BAe11VxX2Tyfq8efMUtOwxpvt/w1200-h675-p-k-no-nu/blog8.jpg","height":675,"width":1200},"author":{"@type":"Person","name":"Sora Blogging Tips"},"publisher":{"@type":"Organization","name":"Blogger","logo":{"@type":"ImageObject","url":"https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60","width":206,"height":60}}}</script>
+			<div class="item-post-inner flex-col">
+				<div class="entry-header p-eh has-meta">
+					<div class="container1">
+						<div class="card p-2 pb-0" *ngFor="let item of arrayData">
+							<h5 class="card-title p-0"><span> Home </span> <span> | {{item.post_cat}}</span>
+							<span class="text-dark"> | {{item.post_title}}</span></h5>
+							<p></p>
+							<p class="pt-2 text-bold-1 pb-2"><i class="bi bi-person text-bold-1 text-green"></i> Post By : <span class="text-underline"><i>{{item.post_author}} </i></span>
+								
+							</p>
+							<div  class="published_time">
+							<button (click)="postLike(item.post_url)" class="btn btn-dark btn-sm" [ngClass]="status ? 'danger':'primary'">  👍 {{item.post_like}}</button>
+								<div class="published_time" *ngIf="item.post_update_date===item.post_day"><img src="http://balindra.com/post/images/icons/desktop.png" width="40" /> Published:{{item.post_day|postdate}}</div>
+								<div class="published_time" *ngIf="item.post_update_date!==item.post_day"><img src="http://balindra.com/post/images/icons/desktop.png" width="40" />  Updated:{{item.post_update_date|postdate}}</div>
+							</div> 
+							
+							<h1 class="my-3">{{item.post_title}}</h1>
+
+							<p class="my-3" [innerHtml]="item.post_headline | htmlTransform"></p>
+							<app-offer></app-offer>
+						    
+							<img src="http://balindra.com/post/{{item.post_img}}" class="img-fluid img-thumbnail my-6">
+							<p class="my-4 post_desc" [innerHtml]="item.post_desc | htmlTransform"></p>
+						
+						     <h5 class="p-2">People also ask</h5>
+							 <div class="accordion" id="accordionExample">
+								<div class="accordion-item">
+								  <h2 class="accordion-header" id="headingOne">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									 {{item.post_question1}}
+									</button>
+								  </h2>
+								  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										{{item.post_answer1}}
+									</div>
+								  </div>
+								</div>
+								<div class="accordion-item">
+								  <h2 class="accordion-header" id="headingTwo">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										{{item.post_question2}}
+									</button>
+								  </h2>
+								  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										{{item.post_answer2}}
+									</div>
+								  </div>
+								</div>
+								<div class="accordion-item">
+								  <h2 class="accordion-header" id="headingThree">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										{{item.post_question3}}
+									</button>
+								  </h2>
+								  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										{{item.post_answer3}}
+									</div>
+								  </div>
+								</div>
+							  </div>
+							    <div class="blog-contact">
+								<div class="card-container">
+									<div class="card show-card">
+										<div class="card-img">
+											<img src="http://balindra.com/post/images/ads/blogprofile-1.avif" alt="profile-image">
+										</div>
+										<div class="card-body">
+											<div class="card-title">
+												<h3>Mr. Mickel</h3>
+												<p>Position: Software Devloper</p>
+											</div>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum nostrum eius ad officia, ipsa recusandae provident iste quasi placeat excepturi deleniti tempora repellendus sunt?</p>
+											<div class="foa-info">
+												<i class="fa-solid fa-phone"></i>
+												<p>1234567890</p>
+											</div>
+											<div class="foa-info">
+												<i class="fa-solid fa-at"></i>
+												<p>example@gmail.com</p>
+											</div>
+											<button class="btn btn-outline-danger">View Personal Blogs</button>
+										</div>
+									</div>
+								</div>
+								<div class="card-container">
+									<div class="card show-card">
+										<div class="card-img">
+											<img src="http://balindra.com/post/images/ads/blogprofile-2.avif" alt="profile-image">
+										</div>
+										<div class="card-body">
+											<div class="card-title">
+												<h3>Angela</h3>
+												<p>Position : Content Writer</p>
+											</div>
+											<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum nostrum eius ad officia, ipsa recusandae provident iste quasi placeat excepturi deleniti tempora repellendus sunt?</p>
+											<div class="foa-info">
+												<i class="fa-solid fa-phone"></i>
+												<p>1234567890</p>
+											</div>
+											<div class="foa-info">
+												<i class="fa-solid fa-at"></i>
+												<p>example@gmail.com</p>
+											</div>
+											<button class="btn btn-outline-danger">View Personal Blogs</button>
+										</div>
+									</div>
+								</div>
+							    </div>
+						      <p class="p-2 text-bold-1 color-green">इस आर्टिकल के बारे में, आप अपने विचारो को शेयर कर सकते है जिससे लोगो की काफी हेल्प होगी। </p>
+							  <div class="row">
+								<div class="comment_area p-2">
+								 <div class="card">
+								  <div class="card-body">
+									<form [formGroup]="commentPost" (ngSubmit)="commentPostSubmit()">
+									  <div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Your Name</label>
+										<input type="email" class="form-control" formControlName="cmt_name" placeholder="Name Here">
+									  </div>
+									  <div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Email</label>
+										<input type="email" class="form-control" formControlName="cmt_email" placeholder="Email Here">
+									  </div>
+									  <div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Website</label>
+										<input type="website" class="form-control" formControlName="cmt_website" placeholder="Website Here">
+									  </div>
+									  <div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Message</label>
+										<textarea rows="4" cols="4" formControlName="cmt_message" class="form-control" placeholder="Message"></textarea>
+									  </div>
+					
+									  <div class="mb-3 hidden-lg">
+										<label for="exampleFormControlInput1" class="form-label">Url</label>
+										<input type="email" formControlName="cmt_url" class="form-control" value="{{item.post_url}}">
+									  </div>
+					
+									  <div class="mb-3 hidden-lg">
+										<label for="exampleFormControlInput1" class="form-label">Time</label>
+										<input type="email" formControlName="cmt_time" class="form-control" value="{{getFormattedTime()}}">
+									  </div>
+					
+									  <div class="mb-3 hidden-lg">
+										<label for="exampleFormControlInput1" class="form-label">Url</label>
+										<input type="email" formControlName="cmt_date" class="form-control" value="{{getFormattedDate()}}">
+									  </div>
+					
+									  <button type="submit" class="btn btn-primary mb-3">Post</button>
+									 
+									  
+									 </form>
+								  </div>
+								 </div>
+								</div>
+							  </div>
+							</div> 
+						  
+							  
+							  <div class="comment_post">
+								<div class="card p-4">
+								  <h5 class="mb-4 text-bold text-success">Total comment {{commentArray.length}}</h5>
+								  <div class="media p-2 card mb-2" *ngFor="let commentPost of commentArray.reverse(); let i = index;">
+									<div class="published_time">
+										<img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" width="50">
+										<ul class="list-unstyled list-inline media-detail pull-left">
+											<li class="text-dark">{{commentPost.cmt_time}}</li>
+											<li class="text-dark">{{commentPost.cmt_date}}</li>
+										
+										  </ul>
+									
+									</div>
+									
+										<div class="media-body">
+										
+									  <p class="media-heading text-danger text-bold">{{commentPost.cmt_name}}</p>
+									  <p [innerHTML]="commentPost.cmt_message|linkfy">{{commentPost.cmt_message}}</p>
+									  <p>{{commentPost.cmt_website}}</p>
+									 
+									 
+									</div>
+								  </div>
+								</div>
+							  </div>
+					
+					
+							
+					
+						 
+							
+							
+						  </div>
+						 
+					
+				</div>
+				
+			</div>
+			<div class="widget HTML is-visible type-grid">
+				<div class="widget-title title-wrap">
+				  <h3 class="title">Related Post</h3>
+				  <a routerLink="#" class="title-link">View all</a>
+				</div>
+				<div class="widget-content">
+				  <div class="content-block grid-items">
+					<!-- .slice(1,3).reverse() -->
+					<div class="grid-item post" *ngFor="let relatedPost of relatedPostArray">
+						
+					  <a  routerLink="../{{relatedPost.post_url}}" title="{{relatedPost.post_title}}" class="entry-image-wrap is-image">
+						<span class="entry-image templateify-lazy" style="background-image:url(http://balindra.com/post/{{relatedPost.post_img}})">
+						</span>
+						<span class="entry-category">{{relatedPost.post_cat}}</span>
+					  </a>
+					
+
+					  <div class="entry-header">
+						<h2 class="entry-title">
+						  <a routerLink="../{{relatedPost.post_url}}" title="{{relatedPost.post_title}}"><span [innerHtml]="relatedPost.post_title | htmlTransform">{{relatedPost.post_title}}</span></a>
+						 
+						</h2>
+						<div class="entry-meta">
+						  <span class="entry-time mi">
+							<time class="published">{{relatedPost.post_date}}</time>
+						  </span>
+						</div>
+					  </div>
+
+					 
+					</div>
+					
+				  
+				  </div>
+				</div>
+			  </div>
+		</article>
+
+		
+		
+		<div class="post-nav post-widget"> 
+			
+			<a class="post-nav-link post-nav-newer-link" (click)="prevPost()">
+    Previous Post
+    </a> <a class="post-nav-link post-nav-older-link" (click)="NextPost()">
+    Next Post
+    </a> </div>
+	</div>
+</div>
+
+<router-outlet></router-outlet>
